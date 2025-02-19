@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif; /* Шрифт по умолчанию */
+  line-height: 1.6; /* Высота строки */
+  background-color: #f4f4f4; /* Цвет фона */
+  color: #333; /* Цвет текста */
+}
+
+#root {
+  max-width: 1200px; /* Максимальная ширина контейнера */
+  margin: 0 auto; /* Центрирование контейнера */
+  /* padding: 20px; Отступы внутри контейнера */
+}

@@ -1,0 +1,1 @@
+export { OneItem } from './oneItem'
