@@ -9,12 +9,20 @@ router.get('/', async (req, res) => {
 
     const startIndex = (page - 1) * limit
     const endIndex = page * limit
-
     const resultItems = items.slice(startIndex, endIndex)
-
     const nextPage = endIndex < items.length ? page + 1 : null
 
     res.status(200).json(resultItems)
+  } catch (err) {
+    res.status(400).json({ message: err.message })
+  }
+})
+
+router.get(/:itemId/, async (req, res) => {
+  try {
+    const { itemId } = req.params
+    const item = items.find((item) => item.id === Number(itemId))
+    res.status(200).json(item)
   } catch (err) {
     res.status(400).json({ message: err.message })
   }

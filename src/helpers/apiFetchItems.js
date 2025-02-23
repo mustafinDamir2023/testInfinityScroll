@@ -18,3 +18,17 @@ export const apiFetchItems = async (page = 1, limit = 3) => {
     throw error // Пробрасываем ошибку дальше
   }
 }
+
+export const apiFetchItem = async (id) => {
+  try {
+    const response = await fetch(`http://localhost:3003/api/items/${id}`)
+    if (!response.ok) {
+      throw new Error('Network response was not ok')
+    }
+    const data = await response.json()
+    return data
+  } catch (error) {
+    console.error('Error fetching item:', error)
+    throw error
+  }
+}
